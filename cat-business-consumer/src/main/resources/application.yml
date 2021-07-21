@@ -1,0 +1,14 @@
+server:
+  port: 8083
+
+#开启jaeger链路跟踪的日志收集
+opentracing:
+  jaeger:
+    enabled: true
+    log-spans: true
+    const-sampler:
+      decision: true
+    #将日志发送到agent
+    udp-sender:
+      host: localhost
+      port: 6831
